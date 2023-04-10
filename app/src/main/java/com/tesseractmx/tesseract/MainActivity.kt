@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.tooling.preview.Preview
 import com.tesseractmx.tesseract.db.SQLIteHelper
 import com.tesseractmx.tesseract.screen.LoginScreen
@@ -23,6 +24,12 @@ class MainActivity : ComponentActivity() {
         clientesSQLiteHelper.anadirDato("RICARDO", "ARENAS", "CARRANZA","18/07/1990",
                 "rd.arenas@ebc.edu.mx", "558377448484", "M", "$12345.67", "1234");
         clientesSQLiteHelper.revisarTabla()
+        val composeView = ComposeView(this)
+        composeView.setContent {
+            // TODO: Agrega aquí tu UI de Compose
+        }
+
+        setContentView(composeView)
         setContent {
             TesseractTheme {
                 // A surface container using the 'background' color from the theme
